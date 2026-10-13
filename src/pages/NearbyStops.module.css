@@ -1,0 +1,205 @@
+.nearbyStopsPage {
+  min-height: calc(100vh - 64px);
+  background-color: var(--color-bg);
+  padding: 2rem 1.5rem 3rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Top Search Controls Bar */
+.topControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #FFFFFF;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.searchWrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.locationInput {
+  width: 100%;
+  padding: 0.625rem 1rem 0.625rem 2.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+.locationInput:focus {
+  border-color: var(--color-teal);
+}
+
+.useLocationBtn {
+  background-color: var(--color-teal);
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.useLocationBtn:hover {
+  background-color: var(--color-teal-hover);
+}
+
+/* Split Layout: Map on left, List on right */
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 1.5rem;
+  height: 640px;
+}
+
+.mapPanel {
+  height: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background-color: #EBF3F0;
+}
+
+.stopsPanel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  gap: 1rem;
+  padding-right: 0.25rem;
+}
+
+.panelTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin-bottom: 0.25rem;
+}
+
+.stopCard {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.15s ease;
+}
+
+.stopCard.selected {
+  border-color: var(--color-teal);
+  box-shadow: 0 0 0 1px var(--color-teal), var(--shadow-sm);
+}
+
+.stopCardHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.stopName {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.stopDistance {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.routesPillsList {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.routeBadge {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.nextDeparturesText {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.viewDetailsBtn {
+  background-color: var(--color-teal);
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: background-color 0.15s ease;
+}
+
+.viewDetailsBtn:hover {
+  background-color: var(--color-teal-hover);
+}
+
+.stopDetailsDrawer {
+  background-color: var(--color-surface-hover);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  font-size: 0.8125rem;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+@media (max-width: 900px) {
+  .topControls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .splitLayout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .mapPanel {
+    height: 350px;
+  }
+
+  .stopsPanel {
+    height: auto;
+    overflow-y: visible;
+  }
+}

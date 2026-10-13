@@ -1,0 +1,310 @@
+.findRoutesPage {
+  min-height: calc(100vh - 64px);
+  background-color: var(--color-bg);
+  padding: 2rem 1.5rem 3rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Top Journey Search Form Bar */
+.searchBarCard {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.searchBarForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr 170px 150px auto;
+  gap: 1rem;
+  align-items: end;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.inputLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.inputField, .selectField {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+.inputField:focus, .selectField:focus {
+  border-color: var(--color-teal);
+}
+
+.submitBtn {
+  background-color: var(--color-teal);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  transition: background-color 0.15s ease;
+  height: 38px;
+}
+
+.submitBtn:hover {
+  background-color: var(--color-teal-hover);
+}
+
+/* Main Layout: Left Sidebar + Right Results */
+.mainLayout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Left Sidebar Filters */
+.sidebarFilter {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.pageHeading {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin-bottom: 0.5rem;
+}
+
+.filterSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.filterTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-transform: capitalize;
+}
+
+.checkboxList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  accent-color: var(--color-teal);
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.sidebarSearch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.sidebarSearchIcon {
+  position: absolute;
+  left: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.sidebarSearchInput {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  background-color: #FFFFFF;
+  outline: none;
+}
+
+.sidebarSearchInput:focus {
+  border-color: var(--color-teal);
+}
+
+/* Results Grid */
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.journeyCard {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.15s ease;
+}
+
+.journeyCard:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.routeNumber {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--color-navy);
+}
+
+.durationBadge {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.serviceType {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin-top: -0.25rem;
+}
+
+.cardMetaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.timesText {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.statusOnTime {
+  color: var(--color-success);
+  font-weight: 700;
+  font-size: 0.8125rem;
+}
+
+.statusDelayed {
+  color: var(--color-warning-text);
+  font-weight: 700;
+  font-size: 0.8125rem;
+}
+
+.stopsCount {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.trackBusActionBtn {
+  flex: 1;
+  background-color: var(--color-teal);
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.55rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.trackBusActionBtn:hover {
+  background-color: var(--color-teal-hover);
+}
+
+.viewRouteActionBtn {
+  flex: 1;
+  background-color: var(--color-navy);
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.55rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: background-color 0.15s ease;
+}
+
+.viewRouteActionBtn:hover {
+  background-color: #1A365D;
+}
+
+/* Expanded Route Details */
+.expandedStops {
+  background-color: var(--color-surface-hover);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  font-size: 0.8125rem;
+  border: 1px dashed var(--color-border);
+  margin-top: 0.25rem;
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 960px) {
+  .searchBarForm {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mainLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .resultsGrid {
+    grid-template-columns: 1fr;
+  }
+}
